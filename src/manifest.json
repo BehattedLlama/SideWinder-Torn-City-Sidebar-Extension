@@ -17,8 +17,12 @@
   ],
   "content_scripts": [
     {
-      "matches": ["https://www.torn.com/*"],
-      "js": ["content.js"],
+      "matches": [
+        "https://www.torn.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_end"
     }
   ],
@@ -28,11 +32,21 @@
     "48": "icon48.png",
     "128": "icon.png"
   },
-  "web_accessible_resources": [{
-    "resources": [
-      "assets/*.svg",
-      "assets/*.txt"
-    ],
-    "matches": ["<all_urls>"]
-  }]
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/*.svg",
+        "assets/*.txt"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "sidewinder@novreske.dev",
+      "strict_min_version": "109.0"
+    }
+  }
 }

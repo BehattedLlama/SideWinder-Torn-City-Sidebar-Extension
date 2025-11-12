@@ -1,3 +1,11 @@
+// Firefox/Chrome namespace shim — keep both namespaces available.
+(function(){try{
+  if (typeof window !== 'undefined' && typeof window.browser === 'undefined' && typeof window.chrome !== 'undefined') {
+    window.browser = window.chrome;
+  }
+} catch(e) { /* no-op */ }})();
+// End shim
+
 (function() {
   'use strict';
   const STORAGE_TYPE = typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local ? 'chrome' : 'local';
